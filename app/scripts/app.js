@@ -51,6 +51,11 @@ angular
         controller: 'MyHomeCtrl',
         controllerAs: 'vm'
       })
+      .when('/main', {
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({
         redirectTo: '/404'
       });

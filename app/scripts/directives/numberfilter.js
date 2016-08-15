@@ -2,20 +2,16 @@
 
 /**
  * @ngdoc directive
- * @name angularAppApp.directive:numberFilter
+ * @name angularAppApp.directive:format
  * @description
- * # numberFilter
+ * # format
  */
-angular.module('angularAppApp')
-  .directive('numberFilter', function () {
+angular.module('angularAppApp').directive('format', ['$filter', function ($filter) {
     return {
-      template: '<div></div>',
-      restrict: 'E',
-      require: '?ngModel'
-      link: function postLink(scope, element, attrs,ctrl) {
-        // element.text('this is the numberFilter directive');
-        // 输入时格式化千分位
-         if (!ctrl) return;
+        require: '?ngModel',
+        link: function (scope, elem, attrs, ctrl) {
+            if (!ctrl) return;
+
 
             ctrl.$formatters.unshift(function (a) {
                 return $filter(attrs.format)(ctrl.$modelValue)
@@ -29,4 +25,4 @@ angular.module('angularAppApp')
             });
         }
     };
-  });
+}]);
