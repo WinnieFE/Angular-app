@@ -19,6 +19,9 @@ module.exports = function (grunt) {
     cdnify: 'grunt-google-cdn'
   });
 
+  // Rewrite URL to 'index.html#/' to enable angualr $location html5Mode and remove the # from URL
+  var rewriteModule = require('http-rewrite-middleware');
+
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
@@ -80,6 +83,16 @@ module.exports = function (grunt) {
           open: true,
           middleware: function (connect) {
             return [
+              rewriteModule.getMiddleware([   
+                  {from: '^/scripts/(.*)', to: '/scripts/$1'},
+                  {from: '^/vendors/(.*)', to: '/vendors/$1'},
+                  {from: '^/styles/(.*)', to: '/styles/$1'},
+                  {from: '^/images/(.*)', to: '/images/$1'},
+                  {from: '^/views/(.*)', to: '/views/$1'},
+                  {from: '^/bower_components/(.*)', to: '/bower_components/$1'},
+                  {from: '^/(.*).html(.*)$', to: '/$1.html$2'},
+                  {from: '^/(.+)$', to: '/index.html#/$1'}
+              ]),
               connect.static('.tmp'),
               connect().use(
                 '/bower_components',

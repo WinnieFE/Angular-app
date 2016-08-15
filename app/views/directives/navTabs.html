@@ -1,0 +1,14 @@
+<div class="tabs">
+	<table>
+		<tbody>
+			<tr> 
+				<td ng-repeat="tab in tabs" ng-class="{active:tab.isActive}" ng-click="clickTab(tab,$event)">
+					<a href="javascript:void(0);" title="">
+						<span ng-class="tab.iconClass"></span><br>
+						<span ng-bind="tab.title"></span>
+					</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

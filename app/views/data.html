@@ -1,0 +1,62 @@
+<div id="data">
+	<!-- <p>hello,data</p> -->
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="title-info text-center">
+					<span class="title text-primary">我的任务数据</span>
+					<span class="sub-title text-muted">任务推广数据于次日更新</span>
+				</div>
+			</div>		
+		</div>
+	</div>
+	
+	<div class="container mb-2" ng-repeat="mytask in myTasks">
+		<div class="row bg-white">
+			<div class="col-xs-12">
+				<div class="text-muted task-type">
+					<a href="" title="" class="text-primary pull-right">继续推广  &gt;</a>
+					<span ng-if="mytask.theme_id == 0"><img class="mr-1" src="/images/task/h5.png" alt="">HTML5页面</span>
+					<span ng-if="mytask.theme_id == 1"><img class="mr-1" src="/images/task/wechat.png" alt="">微信图文消息</span>
+				</div>
+				<div class="media">
+					<div class="media-left">
+						<a href="javascript:void(0);">
+							<img class="media-object" src="" alt="" ng-src="{{mytask.thumb_url}}">
+						</a>
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading text-multi-overflow" ng-bind="mytask.title"></h4>
+						<p class="text-muted">任务进度 <span ng-bind="mytask.progress"></span>｜<span ng-if="mytask.days >-1">剩余<span ng-bind="mytask.days"></span>天</span><span ng-if="mytask.days == -1">已于<span ng-bind="mytask.dateline * 1000 | date:'yyyy-MM-dd'"></span>到期</span></p>
+						<div class="weui_progress">
+							<div class="weui_progress_bar">
+								<div class="weui_progress_inner_bar" style="width: {{mytask.progress}}"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row bg-white">
+			<div class="col-xs-12">
+				<table class="data-table">
+					<tbody>
+						<tr>
+							<td>
+								<span class="text-muted">
+									已带来新访客
+								</span>
+								<span class="text-primary data"> 45</span>
+							</td>
+							<td>
+								<span class="text-muted">已赚小红币</span>
+								<span class="text-primary data">120</span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<nav-tab tab="data"></nav-tab>
+</div>

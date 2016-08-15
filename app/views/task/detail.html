@@ -1,0 +1,75 @@
+<div id="task-detail">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<span class="pull-right text-primary share"><span class="glyphicon glyphicon-share"></span> 分享给好友一起赚钱</span>
+				<h4 class="text-primary">我是小红</h4>
+			</div>
+		</div>
+	</div>	
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="text-muted task-type">
+					<span ng-if="taskDetail.theme_id == 0"><img class="mr-1" src="/images/task/h5.png" alt="">HTML5页面</span>
+					<span ng-if="taskDetail.theme_id == 1"><img class="mr-1" src="/images/task/wechat.png" alt="">微信图文消息</span>
+				</div>
+				<div class="media">
+					<div class="media-left">
+						<a href="javascript:void(0);">
+							<img class="media-object" src="" alt="" ng-src="{{taskDetail.thumb_url}}">
+						</a>
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading text-multi-overflow" ng-bind="taskDetail.title"></h4>
+						<p class="text-muted">任务进度 <span ng-bind="taskDetail.progress"></span>｜<span ng-if="taskDetail.days >-1">剩余<span ng-bind="taskDetail.days"></span>天</span><span ng-if="taskDetail.days == -1">已于<span ng-bind="taskDetail.dateline * 1000 | date:'yyyy-MM-dd'"></span>到期</span></p>
+						<div class="weui_progress">
+							<div class="weui_progress_bar">
+								<div class="weui_progress_inner_bar" style="width: {{taskDetail.progress}}"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row bg-pink">
+			<div class="col-xs-12">
+				<div class="mb-2 info">
+					<span>新房客付费：<span class="text-primary">1枚小红币</span></span><br>
+					<span>总预算：<span class="text-primary">30,000枚小红币</span></span><br>
+					<span>已派发：<span class="text-primary">2,311枚小红币</span></span><br>
+				</div>
+				<div class="mb-2 info-time">
+					<span>开始时间：<span class="text-muted">2015-02-21 14:00</span></span><br>
+					<span>结束时间：<span class="text-muted">2015-04-22 15:00</span></span><br>
+				</div>
+			</div>				
+		</div>
+		<div class="row">
+			<div class="col-xs-6 text-center info-btn">
+				<button type="button" class="btn btn-primary">预览推广链接</button>
+			</div>
+			<div class="col-xs-6 text-center info-btn">
+				<button type="button" class="btn btn-primary">领取任务</button>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row bg-grey dialog">
+			<div class="col-xs-12">
+				<div class="info-dialog">
+					我是小红说：如何领取任务赚钱。
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="text-center text-muted" style="padding: 5rem;">
+					这里是CMS，主要帮助分享回流了解。
+				</div>
+			</div>
+		</div>
+	</div>
+	<nav-tab tab="task"></nav-tab>
+	
+</div>

@@ -1,0 +1,51 @@
+
+<div id="task-list">
+	<div class="container mb-2">
+		<div class="row">
+			<div class="col-xs-12">
+				<table class="menu-table">
+					<tbody>
+						<tr>
+							<td ng-repeat="menu in menus" ng-class="{active:$index==0}">
+								<a href="" title="">
+									<div class="menu">
+										<span ng-bind="menu.name"></span>
+										<span class="triangle-down"></span>
+									</div>
+								</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="container mb-2" ng-repeat="task in tasks">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="text-muted task-type">
+					<span class="text-primary pull-right"><span ng-bind="task.sum_redcoin"></span>枚小红币</span>
+					<span ng-if="task.theme_id == 0"><img class="mr-1" src="/images/task/h5.png" alt="">HTML5页面</span>
+					<span ng-if="task.theme_id == 1"><img class="mr-1" src="/images/task/wechat.png" alt="">微信图文消息</span>
+				</div>
+				<div class="media" ng-click="goto('/task/detail?id='+task.id)">
+					<div class="media-left">
+						<a href="javascript:void(0);">
+							<img class="media-object" src="" alt="" ng-src="{{task.thumb_url}}">
+						</a>
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading text-multi-overflow" ng-bind="task.title"></h4>
+						<p class="text-muted">任务进度 <span ng-bind="task.progress"></span>｜<span ng-if="task.days >-1">还有<span ng-bind="task.days"></span>天到期</span><span ng-if="task.days == -1">已于<span ng-bind="task.dateline * 1000 | date:'yyyy-MM-dd'"></span>到期</span></p>
+						<div class="weui_progress">
+							<div class="weui_progress_bar">
+								<div class="weui_progress_inner_bar" style="width: {{task.progress}}"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<nav-tab tab="task"></nav-tab>
+</div>

@@ -1,0 +1,56 @@
+<div id="myhome">
+	<div class="container mb-2">
+		<div class="row bg-white">
+			<div class="col-xs-12">
+				<div class="media">
+					<div class="media-left">
+						<a href="" title="">
+							<img class="media-object" src="" ng-src="{{user.img_url}}"/>
+						</a>
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading" ng-bind="user.name">
+						</h4>
+						<span class="text-muted">累积完成<span ng-bind="user.task_num"></span>个任务</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container mb-2">
+		<div class="row bg-white">
+			<div class="col-xs-12">
+				<div class="mycoin">
+					<a href="" title="" class="pull-right"><span class="text-muted">提现</span><span class="text-primary">&nbsp;&gt;</span></a>
+					<span class="text-primary">我的小红币：<span ng-bind="user.sum_redcoin"></span>个</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row bg-white">
+			<div class="col-xs-12">
+				<div class="user-tools">
+					<a href="#" title="">
+						<span class="pull-right text-muted">&gt;</span>
+						<span class="text-muted">新手引导</span>
+					</a>
+				</div>
+				<div class="user-tools">
+					<a href="#" title="">
+						<span class="pull-right text-muted">&gt;</span>
+						<span class="text-muted">提现记录</span>
+					</a>
+				</div>
+				<div class="user-tools">
+					<a href="#" title="">
+						<span class="pull-right text-muted">&gt;</span>
+						<span class="text-muted">问题反馈</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<nav-tab tab="myhome"></nav-tab>
+</div>
