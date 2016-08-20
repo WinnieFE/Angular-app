@@ -4,7 +4,7 @@
 > 基于[yeoman](https://github.com/yeoman/generator-angular)快速搭建AngularJS项目。
 version 0.15.1.
 
-1. 首先安装相关插件，==yo==,==grunt-cli==,==bower==,==generator-angular==。
+1. 首先安装相关插件，* yo * , * grunt-cli * , * bower * , * generator-angular * 。
 
 ```
 npm install -g grunt-cli bower yo generator-angular
@@ -12,14 +12,14 @@ npm install -g grunt-cli bower yo generator-angular
 ```
 如果你想使用Sass预处理器，需要安装Ruby和Compass。我使用的是LESS预处理器，在Sublime Text里配置LESS和Less2Css，即可将LESS代码转为CSS代码。
 
-2. 运行 ==yo angular== ,可输入app名称，如果不输入，则与文件夹同名。
+2. 运行 * yo angular * ,可输入app名称，如果不输入，则与文件夹同名。
 
 ```
 yo angular [app-name]
 
 ```
 
-3. 运行==grunt serve==便可预览默认页面。
+3. 运行 * grunt serve * 便可预览默认页面。
 4. 需要注意的是此时地址栏显示地址为：
 
 ```
@@ -41,7 +41,7 @@ http://localhost:9000/#/
 ```
     npm install http-rewrite-middleware;
 ```
-Gruntfile.js中引入==http-rewrite-middleware==
+Gruntfile.js中引入 * http-rewrite-middleware *
 
 ```
   // Rewrite URL to 'index.html#/' to enable angualr $location html5Mode and remove the # from URL
